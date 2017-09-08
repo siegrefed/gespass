@@ -1,0 +1,50 @@
+#table{
+/*    anchura*/
+   width: 50%;  
+   /*centramos el contenido*/
+   margin: 0 auto; 
+    
+}
+body{
+    font-family: verdana;
+}
+table{
+   
+    border-collapse: collapse;
+    
+}
+table,th,tr,td{
+    border: 2px solid #00695c
+}
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+}
+th{
+    background-color: #4caf50;
+    color: white;
+}
+/* selector avanzado. en este caso es para seleccionar los tr pares (even). para impares (odd)*/
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+h1{
+    font-family: lombok;
+    color: #a52714;
+    text-align: center;
+    
+}
+.borrar{
+    color: red;
+    text-decoration: none;
+}
+h5{
+    margin-left: 150px;
+     background-color: #4caf50;
+}
+#backtolist{
+     margin-left: 150px;
+     background-color: #4caf50;
+     border: 1px solid black;
+}

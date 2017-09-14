@@ -17,6 +17,8 @@ class VerifyCsrfToken extends BaseVerifier
         //
 
     	'password*',
-    	'user*'
+    	'user*', 
+        'login',
+        'logdone'
     ];
 }

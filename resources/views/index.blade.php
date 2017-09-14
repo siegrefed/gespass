@@ -29,7 +29,7 @@
                         <td>{{ $row->name }}</td>
                         <td>{{ $row->email }}</td>
                         <td>{{ $row->created_at }}</td>
-
+                        <td><a href="{{ route('user.edit') }}">modficar user</a></td>
                         
                        
                     </tr>

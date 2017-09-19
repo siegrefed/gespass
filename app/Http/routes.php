@@ -27,9 +27,20 @@ Route::get('signup', function() {
 
 Route::resource('user', 'UserController');
 
-Route::resource('password', 'PassController');
+//Route::resource('password', 'PassController');
+Route::get('user/{id}/pass', 'PassController@index')->name('pass.index');
+
+Route::post('user/{user_id}/pass', 'PassController@store')->name('pass.store');
+
+Route::get('user/{user_id}/pass/{id}', 'PassController@show')->name('pass.show');
+
+Route::put('user/{user_id}/pass/{id}', 'PassController@update')->name('pass.update');
+
+Route::delete('user/{user_id}/pass/{id}', 'PassController@destroy')->name('pass.destroy');
 
 Route::resource('class', 'ClassController');
+
+
 
 
 

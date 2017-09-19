@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Index</title>
+        <title>Perfil</title>
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('estilos.css') }}">
         
     </head>    
     <body>
         <h1>Index</h1>
-        <h4><a href = "{{ route('user.create') }}">Crear nuevo usuario</a></h4>
 
         <div id="table">
         
@@ -23,18 +22,17 @@
                 </thead>
                
                 <tbody>
-                 @foreach($data as $row)
                     
                     <tr>
-                        <td>{{ $row->name }}</td>
-                        <td>{{ $row->email }}</td>
-                        <td>{{ $row->created_at }}</td>
-                        <td><a href="{{ route('user.edit', $row->id) }}">modficar user</a></td>
+                        <td>{{ $data->name }}</td>
+                        <td>{{ $data->email }}</td>
+                        <td>{{ $data->created_at }}</td>
+                        <td><a href="{{ route('user.edit', $data->id) }}">modficar user</a></td>
                         
                        
                     </tr>
                 </tbody>
-                @endforeach
+                
            
         </table>
         @endif

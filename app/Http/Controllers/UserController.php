@@ -21,7 +21,7 @@ class UserController extends base
    
     private $path = 'user';
 
-    public $tokenver = '';
+    //public $tokenver = '';
 
 
 
@@ -35,8 +35,8 @@ class UserController extends base
         //
         $data = User::all();
 
-        //return $data;
-        return view('index', compact('data'));
+        return $data;
+        // return view('index', compact('data'));
     }
 
     /**
@@ -96,9 +96,9 @@ class UserController extends base
             if ($this->idToken == $id){
 
                 $data = User::find($id);
-                echo $this->tokenver;
+                //echo $this->tokenver;
 
-                return $data;
+                return view('profile', compact('data'));
             }else 
                 return('acceso denegado');
         }else 
@@ -113,12 +113,12 @@ class UserController extends base
      */
     public function edit($id)
     {
-        if($this->check()){
-            if($this->idToken == $id){
+        // if($this->check()){
+        //     if($this->idToken == $id){
                 $data = User::find($id);
                 return view('edit', compact('data'));
-            }
-        }
+            //}
+        //}
     }
 
     /**
@@ -130,9 +130,9 @@ class UserController extends base
      */
     public function update(Request $request, $id)
     {
-        if($this->check()){
+        //if($this->check()){
 
-            if ($this->idToken == $id){
+            //if ($this->idToken == $id){
 
                 $user = User::find($id);
                 var_dump($request->name);
@@ -141,7 +141,7 @@ class UserController extends base
                     
             
                 if($request->name != null){
-
+    
                     $user->name = $request->name;
                 }
                 if($request->email != null){
@@ -153,11 +153,12 @@ class UserController extends base
                 if($request->avatar != null){
                     $user->avatar = $request->avatar;
                 }
+
                
                 $user->save();
                 return redirect()->route('user.index');
-            }
-        }
+            //}
+        //}
         
     
             
